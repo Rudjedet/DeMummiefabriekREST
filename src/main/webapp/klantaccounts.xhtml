@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>De Mummiefabriek - klantgegevens</title>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+
+            <p:layoutUnit position="north" size="120" resizable="true" closable="true" collapsible="true">
+                DE MUMMIEFABRIEK
+                <br />
+                <br />
+                <h:form>
+                    <p:menubar>
+                        <p:menuitem value="Artikelen" url="artikelen.xhtml" />
+                        <p:menuitem value="Klanten" url="klantaccounts.xhtml" />
+                        <p:menuitem value="Bestellingen" url="bestellinglijst.xhtml" />
+                        <p:menuitem value="Adressen" url="klantadres.xhtml" />
+                        <p:menuitem value="Logout" action="#{login.logout()}" ajax="false" />
+                    </p:menubar>
+                </h:form>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="50" closable="true" collapsible="true">
+                © 2016 Khufu &amp; Dochters
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <h:form>
+                    <p:dataTable value="#{klantBean.klantGegevens}" var="k">
+                        <p:column>
+                            <f:facet name="header">Klant ID</f:facet>
+                                #{k.klantId}
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">Voornaam</f:facet>
+                                #{k.voornaam}
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">Achternaam</f:facet>
+                                #{k.achternaam}
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">E-mail adres</f:facet>
+                                #{k.emailadres}
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">Aanpassen</f:facet>
+                            <center><p:commandButton action="#{klantBean.gaNaarEditKlantGegevens(k)}" 
+                                             value="aanpassen" 
+                                             ajax="false" />
+                            </center>
+                        </p:column>
+                        <p:column> 
+                            <f:facet name="header">Verwijderen</f:facet>
+                            <center><p:commandButton action="#{klantBean.verwijderKlant(k)}" 
+                                             value="verwijderen" 
+                                             ajax="false" />
+                            </center>
+                        </p:column>
+                    </p:dataTable>
+                    <br />
+                    <center><p:commandButton action="registreren.xhtml?faces-redirect=true" 
+                                             value="registreer een nieuwe klant" 
+                                             ajax="false" />
+                    </center>
+                </h:form>
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>
+

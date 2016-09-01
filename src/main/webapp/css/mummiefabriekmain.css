@@ -1,0 +1,107 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19-jul-2016, 12:43:41
+    Author     : Sonja
+*/
+
+/* reset styles */ 
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote { 
+    padding: 0; 
+    margin: 0; 
+    font-size: 100%; 
+    font-weight: normal; 
+}/* end reset styles */
+
+body {
+    background-color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+    background-image: url(img/column.jpg);
+    background-size: auto;
+}
+
+/*later header korter to make way for widget bar*/
+#header { 
+    height: 100px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    color: antiquewhite;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    float: top;
+}
+
+.MummieFabriekTekst {
+    clear: left;
+    font-family: "Century Gothic";
+    font-size: 50px;
+    color: ivory;
+}
+
+#indexIntroductieLinks {
+    height: 500px;
+    width: 15%;
+    float: left;
+    margin: 20px auto auto 20px;
+    background: rgba(255, 255, 255, 0.6);
+    color: antiquewhite;
+    border-style: solid;
+    border-width: thin;
+}
+
+#indexInhoudMidden {
+    height: auto;
+    width: 75%;
+    float: right;
+    margin: 20px 20px auto auto;
+    background: rgba(255, 255, 255, 0.6);
+    /*color: antiquewhite;*/
+    color: darkslategrey;
+    border-style: solid;
+    border-width: thin;
+}
+
+#footer {
+    height: 50px;
+    width: 100%;
+    color: antiquewhite;
+    /*margin-top: auto;*/
+    clear: left;
+}
+
+/*onderstaande is voor indextabel test: vervangen*/
+table {
+    margin: 0 20px;
+    border-spacing: 0;
+    text-align: center;
+    border: solid 1px #f5eabe;
+}
+
+#singleColumn {
+    margin: 20px 30px;
+    text-align: left;
+}
+
+.wood { background-color: burlywood }
+
+.white { background-color: antiquewhite }
+
+.smallText { font-size: small }
+
+#productTable {
+    width: 95%;
+    margin: 20px 20px 20px 25px;
+    table-layout: fixed;
+    position: relative;
+    z-index: 1;
+}
+
+#productTable tr { height: 90px }
+
+#productTable td { width: 145px }
