@@ -35,6 +35,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Klant.findByVoornaam", query = "SELECT k FROM Klant k WHERE k.voornaam = :voornaam"),
     @NamedQuery(name = "Klant.findByAchternaam", query = "SELECT k FROM Klant k WHERE k.achternaam = :achternaam"),
     @NamedQuery(name = "Klant.findByEmailadres", query = "SELECT k FROM Klant k WHERE k.emailadres = :emailadres")})
+
 @XmlRootElement
 public class Klant implements Serializable {
 
