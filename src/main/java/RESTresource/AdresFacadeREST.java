@@ -53,8 +53,7 @@ public class AdresFacadeREST {
     @Path("{id}")
     public void remove(@PathParam("id") Integer id, Adres adres) {
         getEntityManager().remove(getEntityManager().merge(adres));
-        
-        //getEntityManager().remove(getEntityManager().find(adres, id)).merge(adres);
+        getEntityManager().find(adresEntity, id);
 
     }
 
