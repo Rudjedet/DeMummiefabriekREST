@@ -12,6 +12,7 @@ import javax.ws.rs.core.Application;
  *
  * @author Sonja
  */
+
 @javax.ws.rs.ApplicationPath("webresources")
 public class ApplicationConfig extends Application {
 
@@ -28,6 +29,7 @@ public class ApplicationConfig extends Application {
      * all resources defined in the project.
      * If required, comment out calling this method in getClasses().
      */
+    
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(RESTservice.AdresFacadeREST.class);
         resources.add(RESTservice.ArtikelFacadeREST.class);

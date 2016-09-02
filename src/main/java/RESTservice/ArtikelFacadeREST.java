@@ -7,6 +7,7 @@ package RESTservice;
 
 import entity.Artikel;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -19,73 +20,70 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import session.ArtikelFacade;
 
 /**
  *
  * @author Sonja
  */
+
 @Stateless
 @Path("entity.artikel")
-public class ArtikelFacadeREST extends AbstractFacade<Artikel> {
+public class ArtikelFacadeREST {
 
     @PersistenceContext(unitName = "com.mycompany_DeMummiefabriek_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
-    public ArtikelFacadeREST() {
-        super(Artikel.class);
-    }
+    @EJB
+    ArtikelFacade artFacade;
 
     @POST
-    @Override
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void create(Artikel entity) {
-        super.create(entity);
+        artFacade.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void edit(@PathParam("id") Integer id, Artikel entity) {
-        super.edit(entity);
+        artFacade.edit(entity);
     }
 
     @DELETE
     @Path("{id}")
     public void remove(@PathParam("id") Integer id) {
-        super.remove(super.find(id));
+        artFacade.remove(artFacade.find(id));
     }
 
     @GET
     @Path("{id}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Artikel find(@PathParam("id") Integer id) {
-        return super.find(id);
+        return artFacade.find(id);
     }
 
     @GET
-    @Override
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public List<Artikel> findAll() {
-        return super.findAll();
+        return artFacade.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public List<Artikel> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
-        return super.findRange(new int[]{from, to});
+        return artFacade.findRange(new int[]{from, to});
     }
 
     @GET
     @Path("count")
     @Produces(MediaType.TEXT_PLAIN)
     public String countREST() {
-        return String.valueOf(super.count());
+        return String.valueOf(artFacade.count());
     }
 
-    @Override
     protected EntityManager getEntityManager() {
         return em;
-    }
-    
+    }   
 }
