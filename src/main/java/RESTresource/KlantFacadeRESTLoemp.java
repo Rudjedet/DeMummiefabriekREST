@@ -5,7 +5,7 @@
  */
 package RESTresource;
 
-import entity.Artikel;
+import entity.Klant;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -25,56 +25,56 @@ import javax.ws.rs.core.MediaType;
  * @author Sonja
  */
 @Stateless
-@Path("entity.artikel")
-public class ArtikelFacadeREST {
+@Path("klant")
+public class KlantFacadeRESTLoemp {
 
     @PersistenceContext(unitName = "com.mycompany_DeMummiefabriek_war_1.0-SNAPSHOTPU")
     private EntityManager em;
-
-    public ArtikelFacadeREST() {
-    }
     
-    private Class<Artikel> artikelEntity;
+    private Class<Klant> klantEntity;
+    
+    public KlantFacadeRESTLoemp() {
+    }
 
     @POST
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(Artikel artikel) {
-        getEntityManager().persist(artikel);
+    public void create(Klant klant) {
+        getEntityManager().persist(klant);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void edit(@PathParam("id") Integer id, Artikel artikel) {
-        getEntityManager().merge(artikel);
+    public void edit(@PathParam("id") Integer id, Klant klant) {
+        getEntityManager().merge(klant);
     }
 
     @DELETE
     @Path("{id}")
-    public void remove(@PathParam("id") Integer id, Artikel artikel) {
-        getEntityManager().remove(getEntityManager().merge(artikel));
-        getEntityManager().find(artikelEntity, id);
+    public void remove(@PathParam("id") Integer id, Klant klant) {
+        getEntityManager().remove(getEntityManager().merge(klant));
+        getEntityManager().find(klantEntity, id);
     }
 
     @GET
     @Path("{id}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Artikel findArtikel(@PathParam("id") Integer id) {
-        return getEntityManager().find(artikelEntity, id);
+    public Klant findKlant(@PathParam("id") Integer id) {
+        return getEntityManager().find(klantEntity, id);
     }
 
     @GET
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public List<Artikel> findAll() {
+    public List<Klant> findAll() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        cq.select(cq.from(artikelEntity));
+        cq.select(cq.from(klantEntity));
         return getEntityManager().createQuery(cq).getResultList();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public List<Artikel> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<Klant> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return rangeFinder(new int[]{from, to});
     }
 
@@ -89,22 +89,22 @@ public class ArtikelFacadeREST {
         return em;
     }
     
-    public Artikel find(Integer id) {
-        return getEntityManager().find(artikelEntity, id);
+    public Klant find(Integer id) {
+        return getEntityManager().find(klantEntity, id);
     }
     
-    public List<Artikel> rangeFinder(int[] range) {
+    public List<Klant> rangeFinder(int[] range) {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        cq.select(cq.from(artikelEntity));
+        cq.select(cq.from(klantEntity));
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         q.setMaxResults(range[1] - range[0] + 1);
         q.setFirstResult(range[0]);
         return q.getResultList();
     }
-    
+
     public int count() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        javax.persistence.criteria.Root<Artikel> rt = cq.from(artikelEntity);
+        javax.persistence.criteria.Root<Klant> rt = cq.from(klantEntity);
         cq.select(getEntityManager().getCriteriaBuilder().count(rt));
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();

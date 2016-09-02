@@ -5,7 +5,7 @@
  */
 package RESTresource;
 
-import entity.Klant;
+import entity.Adres;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -25,56 +25,57 @@ import javax.ws.rs.core.MediaType;
  * @author Sonja
  */
 @Stateless
-@Path("klant")
-public class KlantFacadeREST {
+@Path("adres")
+public class AdresFacadeRESTLoemp {
 
     @PersistenceContext(unitName = "com.mycompany_DeMummiefabriek_war_1.0-SNAPSHOTPU")
     private EntityManager em;
     
-    private Class<Klant> klantEntity;
-    
-    public KlantFacadeREST() {
+    private Class<Adres> adresEntity;
+
+    public AdresFacadeRESTLoemp() {
     }
 
     @POST
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(Klant klant) {
-        getEntityManager().persist(klant);
+    public void create(Adres adres) {
+        getEntityManager().persist(adres);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void edit(@PathParam("id") Integer id, Klant klant) {
-        getEntityManager().merge(klant);
+    public void edit(@PathParam("id") Integer id, Adres adres) {
+        getEntityManager().merge(adres);
     }
 
     @DELETE
     @Path("{id}")
-    public void remove(@PathParam("id") Integer id, Klant klant) {
-        getEntityManager().remove(getEntityManager().merge(klant));
-        getEntityManager().find(klantEntity, id);
+    public void remove(@PathParam("id") Integer id, Adres adres) {
+        getEntityManager().remove(getEntityManager().merge(adres));
+        getEntityManager().find(adresEntity, id);
+
     }
 
     @GET
     @Path("{id}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Klant findKlant(@PathParam("id") Integer id) {
-        return getEntityManager().find(klantEntity, id);
+    public Adres findAdres(@PathParam("id") Integer id) {
+        return getEntityManager().find(adresEntity, id);
     }
 
     @GET
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public List<Klant> findAll() {
+    public List<Adres> findAll() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        cq.select(cq.from(klantEntity));
+        cq.select(cq.from(adresEntity));
         return getEntityManager().createQuery(cq).getResultList();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public List<Klant> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<Adres> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {        
         return rangeFinder(new int[]{from, to});
     }
 
@@ -89,22 +90,22 @@ public class KlantFacadeREST {
         return em;
     }
     
-    public Klant find(Integer id) {
-        return getEntityManager().find(klantEntity, id);
+    public Adres find(Integer id) {
+        return getEntityManager().find(adresEntity, id);
     }
     
-    public List<Klant> rangeFinder(int[] range) {
+    public List<Adres> rangeFinder(int[] range) {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        cq.select(cq.from(klantEntity));
+        cq.select(cq.from(adresEntity));
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         q.setMaxResults(range[1] - range[0] + 1);
         q.setFirstResult(range[0]);
         return q.getResultList();
     }
-
+    
     public int count() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        javax.persistence.criteria.Root<Klant> rt = cq.from(klantEntity);
+        javax.persistence.criteria.Root<Adres> rt = cq.from(adresEntity);
         cq.select(getEntityManager().getCriteriaBuilder().count(rt));
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
