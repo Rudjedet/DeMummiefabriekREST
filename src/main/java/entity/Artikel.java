@@ -21,6 +21,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -34,6 +36,8 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "Artikel.findByArtikelnaam", query = "SELECT a FROM Artikel a WHERE a.artikelnaam = :artikelnaam")})
     //@NamedQuery(name = "Artikel.findByArtikelprijs", query = "SELECT a FROM Artikel a WHERE a.artikelprijs = :artikelprijs"),
     //@NamedQuery(name = "Artikel.findByArtikelvoorraad", query = "SELECT a FROM Artikel a WHERE a.artikelvoorraad = :artikelvoorraad")})
+
+@XmlRootElement
 public class Artikel implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -109,6 +113,7 @@ public class Artikel implements Serializable {
         this.artikelvoorraad = artikelvoorraad;
     }
 
+    @XmlTransient
     public Collection<BesteldArtikel> getBesteldArtikelCollection() {
         return besteldArtikelCollection;
     }
