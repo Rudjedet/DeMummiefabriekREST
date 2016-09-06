@@ -93,7 +93,7 @@ table {
 
 .smallText { font-size: small }
 
-#productTable {
+.productTable {
     width: 95%;
     margin: 20px 20px 20px 25px;
     table-layout: fixed;
@@ -101,6 +101,6 @@ table {
     z-index: 1;
 }
 
-#productTable tr { height: 90px }
+.productTable tr { height: 90px }
 
-#productTable td { width: 145px }
+.productTable td { width: 145px }

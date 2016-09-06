@@ -7,6 +7,7 @@ var url = "http://localhost:8080/DeMummiefabriekREST/rest/artikel";
         dataType: "json",
         success: function(data){
             getAlleArtikelen(data);
+            $.each()
         }
     });
 
