@@ -1,28 +1,36 @@
-$(document).ready(function(){
-var url = "http://localhost:8080/DeMummiefabriekREST/rest/artikel";
+$(document).ready(function () {
+
+    var url = "http://localhost:8080/DeMummiefabriekREST/rest/artikel";
 
     $.ajax({
         type: 'GET',
         url: url,
         dataType: "json",
-        success: function(data){
-            getAlleArtikelen(data);
+        success: function (artikelen) {
+            getAlleArtikelen(artikelen);
         }
     });
-
-    function getAlleArtikelen(artikelen){
-        $("#artikellijst").empty();
-        $.each(artikelen, function(veld){
-            $("#artikellijst").append("<th id='" + veld.artikelId + "'></th>");
-            $("th#" + veld.artikelId).append("<td>" + veld.artikelId + "</td>");
-            $("th#" + veld.artikelId).append("<td>" + veld.artikelnaam + "</td>");
-            $("th#" + veld.artikelId).append("<td>" + veld.artikelvoorraad + "</td>");
-            $("th#" + veld.artikelId).append("<td>" + veld.artikelprijs + "</td>");
-        });
+    
+    function getAlleArtikelen() {
+        $.getJSON(url, function (artikelen) {
+        $.each(artikelen, function(index, artikel){
+        $("#artikellijst").append("<tr id='" + index + "'></tr>");
+                $("th#" + veld.artikelId).append("<td>" + veld.artikelId + "</td>");
+                $("th#" + veld.artikelId).append("<td>" + veld.artikelnaam + "</td>");
+                $("th#" + veld.artikelId).append("<td>" + veld.artikelvoorraad + "</td>");
+                $("th#" + veld.artikelId).append("<td>" + veld.artikelprijs + "</td>");
+        })
     }
 
-//    function getAlleArtikelen() {
-//        $("#artikelen").load("rest/index.html"); 
+//    function getAlleArtikelen(artikelen) {
+//            $("#artikellijst").empty();
+//            $.each(artikelen, function (index, veld) {
+//                $("#artikellijst").append("<th id='" + veld.artikelId + "'></th>");
+//                $("th#" + veld.artikelId).append("<td>" + veld.artikelId + "</td>");
+//                $("th#" + veld.artikelId).append("<td>" + veld.artikelnaam + "</td>");
+//                $("th#" + veld.artikelId).append("<td>" + veld.artikelvoorraad + "</td>");
+//                $("th#" + veld.artikelId).append("<td>" + veld.artikelprijs + "</td>");
+//            });
+//        });
 //    }
-
 }
