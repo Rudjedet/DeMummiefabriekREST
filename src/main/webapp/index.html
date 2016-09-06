@@ -21,19 +21,33 @@ and open the template in the editor.
 
         <div id="indexInhoudMidden">
             
-            <table id="artikelen">
-                <tr>
-                    <th id="artikel">Artikel</th>
-                    <th id="prijs">Prijs</th>
-                    <th id="voorraad">Voorraad</th>
-                </tr>
-                <tr>
-                    <td id="artikelnaam"></td>
-                    <td id="artikelprijs"></td>
-                    <td id="artikelvoorraad"></td>
-                </tr>
-            </table>
+            <form>
+                <table id="productTable">
+                    <thead id="artikelen">
+                        <th>Artikel</th>
+                        <th>Prijs</th>
+                        <th>Voorraad</th>
+                    </thead>
+                    <tbody id="artikellijst"></tbody>
+                </table>
+            </form>
             
+<!--        <form id="artikellijst">
+                <table id="artikelen">
+                    <tr>
+                        <th id="artikel">Artikel</th>
+                        <th id="prijs">Prijs</th>
+                        <th id="voorraad">Voorraad</th>
+                    </tr>
+                    <tr>
+                        <td id="index"></td>
+                        <td id="artikelprijs"></td>
+                        <td id="artikelvoorraad"></td>
+                    </tr>
+                </table>
+            </form>-->
+        <script src="../js/jquery-3.1.0.js"></script>    
+        <script src="../js/artikel.js"></script>
         </div>
 
         <div id="footer">

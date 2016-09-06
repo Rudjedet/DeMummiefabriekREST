@@ -1,5 +1,5 @@
 //$(document).ready(function(){
-//var URL = "http://localhost:8080/DeMummiefabriekREST/restklant";
+//var url = "http://localhost:8080/DeMummiefabriekREST/restklant";
 //
 //
 //
