@@ -7,13 +7,12 @@ var url = "http://localhost:8080/DeMummiefabriekREST/rest/artikel";
         dataType: "json",
         success: function(data){
             getAlleArtikelen(data);
-            $.each()
         }
     });
 
     function getAlleArtikelen(artikelen){
         $("#artikellijst").empty();
-        $.each(artikelen, function(index, veld){
+        $.each(artikelen, function(veld){
             $("#artikellijst").append("<th id='" + veld.artikelId + "'></th>");
             $("th#" + veld.artikelId).append("<td>" + veld.artikelId + "</td>");
             $("th#" + veld.artikelId).append("<td>" + veld.artikelnaam + "</td>");
@@ -21,5 +20,9 @@ var url = "http://localhost:8080/DeMummiefabriekREST/rest/artikel";
             $("th#" + veld.artikelId).append("<td>" + veld.artikelprijs + "</td>");
         });
     }
+
+//    function getAlleArtikelen() {
+//        $("#artikelen").load("rest/index.html"); 
+//    }
 
 }
