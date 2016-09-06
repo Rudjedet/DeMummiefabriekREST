@@ -28,7 +28,7 @@ import session.AdresFacade;
  */
 
 @Stateless
-@Path("entity.adres")
+@Path("adres")
 public class AdresFacadeREST {
 
     @PersistenceContext(unitName = "com.mycompany_DeMummiefabriek_war_1.0-SNAPSHOTPU")

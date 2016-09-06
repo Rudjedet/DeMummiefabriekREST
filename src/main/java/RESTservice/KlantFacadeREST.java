@@ -28,7 +28,7 @@ import session.KlantFacade;
  */
 
 @Stateless
-@Path("entity.klant")
+@Path("klant")
 public class KlantFacadeREST {
 
     @PersistenceContext(unitName = "com.mycompany_DeMummiefabriek_war_1.0-SNAPSHOTPU")
