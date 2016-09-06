@@ -21,28 +21,17 @@ and open the template in the editor.
 
         <div id="indexInhoudMidden">
             
-            <table id="productTable">
-
-                <c:forEach var="artikel" items="${artikelen}" varStatus="iter">
-
-                    <tr class="${((iter.index % 2) == 0) ? 'wood' : 'white'}">
-                        <td>
-                            <img src="${initParam.productImagePath}${artikel.artikelnaam}.png"
-                                 alt="${artikel.artikelnaam}" />
-                        </td>
-
-                        <td>
-                    ${artikel.artikelnaam}
-                            <br />
-                                <span class="smallText">${artikel.artikelnaam}</span>
-                        </td>
-
-                        <td>&euro; ${artikel.artikelprijs}</td>
-
-                    </tr>
-
-                </c:forEach>
-
+            <table id="artikelen">
+                <tr>
+                    <th id="artikel">Artikel</th>
+                    <th id="prijs">Prijs</th>
+                    <th id="voorraad">Voorraad</th>
+                </tr>
+                <tr>
+                    <td id="artikelnaam"></td>
+                    <td id="artikelprijs"></td>
+                    <td id="artikelvoorraad"></td>
+                </tr>
             </table>
             
         </div>
