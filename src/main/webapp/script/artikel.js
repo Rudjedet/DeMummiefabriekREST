@@ -28,7 +28,7 @@ $(document).ready(function () {
     function getAlleArtikelen(artikelen) {
         $("#artikellijst").empty();
         $.each(artikelen, function (ignore, index) {
-            $("tbody#artikellijst").append("<th id='" + index.artikelId + "'></th>");
+            $("#artikellijst").append("<th id='" + index.artikelId + "'></th>");
             $("th#" + index.artikelId).append("<td>" + index.artikelId + "</td>");
             $("th#" + index.artikelId).append("<td>" + index.artikelnaam + "</td>");
             $("th#" + index.artikelId).append("<td>" + index.artikelvoorraad + "</td>");
