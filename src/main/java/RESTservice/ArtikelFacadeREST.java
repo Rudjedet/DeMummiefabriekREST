@@ -28,7 +28,7 @@ import session.ArtikelFacade;
  */
 
 @Stateless
-@Path("artikel")
+@Path("/artikel")
 public class ArtikelFacadeREST {
 
     @PersistenceContext(unitName = "com.mycompany_DeMummiefabriek_war_1.0-SNAPSHOTPU")
