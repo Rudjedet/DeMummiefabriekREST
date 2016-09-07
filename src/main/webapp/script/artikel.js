@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var url = "http://localhost:8080/DeMummiefabriekREST/webresources/artikel";
+    var url = "http://localhost:8080/DeMummiefabriekREST/rest/artikel";
 
     $.ajax({
         type: 'GET',
@@ -28,11 +28,11 @@ $(document).ready(function () {
     function getAlleArtikelen(artikelen) {
         $("#artikellijst").empty();
         $.each(artikelen, function (ignore, index) {
-            $("#artikellijst").append("<th id='" + index.artikelId + "'></th>");
-            $("th#" + index.artikelId).append("<td>" + index.artikelId + "</td>");
-            $("th#" + index.artikelId).append("<td>" + index.artikelnaam + "</td>");
-            $("th#" + index.artikelId).append("<td>" + index.artikelvoorraad + "</td>");
-            $("th#" + index.artikelId).append("<td>" + index.artikelprijs + "</td>");
+            $("#artikellijst").append("<tr id='" + index.artikelId + "'></tr>");
+            $("tr#" + index.artikelId).append("<td>" + index.artikelId + "</td>");
+            $("tr#" + index.artikelId).append("<td>" + index.artikelnaam + "</td>");
+            $("tr#" + index.artikelId).append("<td>" + index.artikelvoorraad + "</td>");
+            $("tr#" + index.artikelId).append("<td>" + index.artikelprijs + "</td>");
         });
     }
 } 
