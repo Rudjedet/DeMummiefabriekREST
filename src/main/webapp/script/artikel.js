@@ -35,4 +35,4 @@ $(document).ready(function () {
             $("th#" + index.artikelId).append("<td>" + index.artikelprijs + "</td>");
         });
     }
-}
+} 
