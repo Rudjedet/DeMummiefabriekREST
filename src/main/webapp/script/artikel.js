@@ -11,20 +11,7 @@ $(document).ready(function () {
         }
     });
     
-    //doet niets
-//    function getAlleArtikelen() { 
-//        $.getJSON(url, function (artikelen) {
-//        $.each(artikelen, function(index, artikel){
-//            $("#artikellijst").append("<tr id='" + index + "'></tr>");
-//                $("th#" + artikel.artikelId).append("<td>" + artikel.artikelId + "</td>");
-//                $("th#" + artikel.artikelId).append("<td>" + artikel.artikelnaam + "</td>");
-//                $("th#" + artikel.artikelId).append("<td>" + artikel.artikelvoorraad + "</td>");
-//                $("th#" + artikel.artikelId).append("<td>" + artikel.artikelprijs + "</td>");
-//        })
-//    }
-
-    //doet ook niets
-    //technically : empty, then repopulate
+    //empty, then repopulate
     function getAlleArtikelen(artikelen) {
         $("#artikellijst").empty();
         $.each(artikelen, function (ignore, index) {
