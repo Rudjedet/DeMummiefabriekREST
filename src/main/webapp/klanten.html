@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/mummiefabriekmain.css"/>
+        <meta charset="UTF-8">
+        <title>De Mummiefabriek</title>
+    </head>
+    <body>
+
+        <div id="header">
+            <span class="MummieFabriekTekst">De Mummiefabriek</span>
+        </div>
+
+        <div id="indexIntroductieLinks">
+            <center><h1>Welkom bij de Mummiefabriek!</h1></center>
+            <br>
+            <br>
+            <center>U bevindt zich in het klantmenu</center>
+            <br>
+            <br>
+            <center>
+                <a href="index.html" class="button">Artikelen</a>
+                <br><br>
+                <a href="klanten.html" class="button">Klanten</a>
+                <br><br>
+                <a href="about.html" class="button">Over ons</a>
+            </center>
+        </div>
+
+        <div id="indexInhoudMidden">
+            <div id="tableScroll">
+                <form>
+                    <table id="klanten" class="productTable">
+                        <thead>
+                        <th>Klantnummer</th>
+                        <th>Voornaam</th>
+                        <th>Achternaam</th>
+                        <th>E-mailadres</th>
+                        </thead>
+                        <tbody id="klantgegevens"></tbody>
+                    </table>
+                </form>
+
+                <script src="script/jquery.min.js"></script>    
+                <script src="script/klant.js"></script>
+            </div>
+        </div>
+        <div id="footer">
+            <span>© 2016, Khufu &amp; Dochters</span>
+        </div>
+    </body>
+</html>
