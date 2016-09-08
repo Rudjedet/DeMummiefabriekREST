@@ -105,30 +105,29 @@ table {
     border: solid 1px #f5eabe;
 }
 
-.productTable {
+#tableScroll {
+    height: 500px;
+    overflow-y: scroll;
+    /*overflow-x: scroll;*/
+}
+
+.listTable {
     width: 95%;
     margin: 20px 20px 20px 25px;
-    table-layout: fixed;
+    table-layout: auto;
     position: relative;
     z-index: 1;
 }
 
-#tableScroll {
-    height: 500px;
-    overflow-y: scroll;
-    overflow-x: scroll;
-}
-
-.productTable th { 
+.listTable th { 
     background-color: #faf1d6; 
     border-bottom: solid 1px whitesmoke;
 }
 
-.productTable tr { height: 50px }
+.listTable tr { height: 50px }
 
 /*dark row*/
-.productTable tr:nth-child(odd) { background-color: #efdcc3 }
+.listTable tr:nth-child(odd) { background-color: #efdcc3 }
 
 /*light row*/
-.productTable tr:nth-child(even) { background-color: #faf1d6 }
-
+.listTable tr:nth-child(even) { background-color: #faf1d6 }
