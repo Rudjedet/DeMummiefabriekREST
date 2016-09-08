@@ -6,7 +6,8 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/mummiefabriekmain.css" />
+        <link rel="stylesheet" type="text/css" href="css/mummiefabriekmain.css"/>
+        <meta charset="UTF-8">
         <title>De Mummiefabriek</title>
     </head>
     <body>
@@ -23,22 +24,22 @@ and open the template in the editor.
         </div>
 
         <div id="indexInhoudMidden">
-            
-            <form>
-                <table id="artikelen" class="productTable">
-                    <thead>
+            <div id="tableScroll">
+                <form>
+                    <table id="artikelen" class="productTable">
+                        <thead>
                         <th>Artikelnummer</th>
                         <th>Omschrijving</th>
                         <th>Prijs</th>
                         <th>Voorraad</th>
-                    </thead>
-                    <tbody id="artikellijst"></tbody>
-                </table>
-            </form>
-            
-            <script src="script/jquery.min.js"></script>    
-            <script src="script/artikel.js"></script>
-            
+                        </thead>
+                        <tbody id="artikellijst"></tbody>
+                    </table>
+                </form>
+
+                <script src="script/jquery.min.js"></script>    
+                <script src="script/artikel.js"></script>
+            </div>
         </div>
         <div id="footer">
             <span>© 2016, Khufu &amp; Dochters</span>
