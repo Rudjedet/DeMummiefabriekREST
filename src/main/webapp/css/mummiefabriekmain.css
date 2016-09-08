@@ -11,6 +11,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
     font-weight: normal; 
 }/* end reset styles */
 
+/*main styles*/
 body {
     background-color: antiquewhite;
     font-family: Arial, Helvetica, sans-serif;
@@ -21,7 +22,7 @@ body {
     background-size: auto;
 }
 
-/*later header korter to make way for widget bar*/
+/*header style*/
 #header { 
     height: 100px;
     width: 100%;
@@ -39,15 +40,41 @@ body {
     color: ivory;
 }
 
+/*body styles*/
 #indexIntroductieLinks {
     height: 500px;
     width: 15%;
+    text-align: justify;
     float: left;
     margin: 20px auto auto 20px;
     background: rgba(255, 255, 255, 0.6);
     color: darkslategrey;
     border-style: solid;
     border-width: thin;
+}
+
+h1.indexIntroductieLinks {
+    text-align: justify;
+}
+
+/*button styles*/
+
+a.button {
+    background-color: darkslategrey;
+    height: 45px;
+    width: 80%;
+    border-style: solid;
+    border-width: thin;
+    border-color: silver;
+    color: whitesmoke;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
 }
 
 #indexInhoudMidden {
@@ -61,6 +88,7 @@ body {
     border-width: thin;
 }
 
+/*footer style*/
 #footer {
     height: 50px;
     width: 100%;
@@ -69,8 +97,7 @@ body {
     clear: left;
 }
 
-/*table CSS*/
-
+/*table styles*/
 table {
     margin: 0 20px;
     border-spacing: 0;
@@ -96,12 +123,11 @@ table {
     border-bottom: solid 1px whitesmoke;
 }
 
+.productTable tr { height: 50px }
+
 /*dark row*/
 .productTable tr:nth-child(odd) { background-color: #efdcc3 }
 
 /*light row*/
 .productTable tr:nth-child(even) { background-color: #faf1d6 }
 
-.productTable tr { height: 50px }
-
-/*.productTable td { width: 145px }*/
