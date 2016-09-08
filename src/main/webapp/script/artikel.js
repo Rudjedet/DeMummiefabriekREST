@@ -31,8 +31,8 @@ $(document).ready(function () {
             $("#artikellijst").append("<tr id='" + index.artikelId + "'></tr>");
             $("tr#" + index.artikelId).append("<td>" + index.artikelId + "</td>");
             $("tr#" + index.artikelId).append("<td>" + index.artikelnaam + "</td>");
-            $("tr#" + index.artikelId).append("<td>" + index.artikelvoorraad + "</td>");
             $("tr#" + index.artikelId).append("<td>" + index.artikelprijs + "</td>");
+            $("tr#" + index.artikelId).append("<td>" + index.artikelvoorraad + "</td>");
         });
     }
 }); 
