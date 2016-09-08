@@ -35,4 +35,5 @@ $(document).ready(function () {
             $("tr#" + index.artikelId).append("<td>" + index.artikelvoorraad + "</td>");
         });
     }
+    
 }); 
