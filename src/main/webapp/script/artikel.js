@@ -13,7 +13,7 @@ $(document).ready(function () {
         }
     });
     
-    function nieuwArtikel() {
+    function nieuwArtikel(url) {
         $.ajax({
             type: 'POST',
             contentType: 'application/json',
@@ -31,7 +31,7 @@ $(document).ready(function () {
         });
     }
     
-        function verwijderArtikel() {
+    function verwijderArtikel(url) {
         $.ajax({
             type: 'DELETE',
             url: url,
@@ -105,7 +105,7 @@ $(document).ready(function () {
     $("#artikelToevoegen").submit(function (event) {
         event.preventDefault();
         if ($("#artikelToevoegen").valid()) {
-            ajaxCreate(url);
+            nieuwArtikel(url);
             
         }
     });
