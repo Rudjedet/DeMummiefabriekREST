@@ -20,7 +20,7 @@ $(document).ready(function () {
             $("tr#" + index.artikelId).append("<td>" + index.artikelnaam + "</td>");
             $("tr#" + index.artikelId).append("<td>" + index.artikelprijs + "</td>");
             $("tr#" + index.artikelId).append("<td>" + index.artikelvoorraad + "</td>");
-            $("tr#" + index.artikelId).append("<td id='verwijder'><button type='knop' id='"+ index.artikelId + "'>Verwijderen</button>");
+            $("tr#" + index.artikelId).append("<td id='verwijder'><button type='button' id='"+ index.artikelId + "'>Verwijderen</button>");
         });
     }
     
@@ -35,8 +35,7 @@ $(document).ready(function () {
         });
     }
     
-    $(document).on("click", "td#verwijder knop", function(event){
-        alert: ("Weet u zeker dat u dit artikel wil verwijderen?");
+    $(document).on("click", "td#verwijder button", function(event){
         var artUrl = url + "/" + event.target.id;
         verwijderArtikel(artUrl);
     });
@@ -45,10 +44,11 @@ $(document).ready(function () {
         $.ajax({
             type: 'DELETE',
             url: url,
-            success: function (artikelen) {
-                getArtikelen(artikelen);
+            success: function (data, textStatus, jqXHR) {
+                getArtikelen();
+                alert: ("Het artikel is succesvol verwijderd.")
             },
-            error: function (error) {
+            error: function (jqXHR, textStatus, error) {
                 alert: ("Oeps! Er is iets mis gegaan.\n" + error);
             }
         });
