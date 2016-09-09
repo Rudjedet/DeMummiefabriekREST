@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html> 
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/mummiefabriekmain.css"/>
+        <meta charset="UTF-8">
+        <title>De Mummiefabriek</title>
+    </head>
+    <body>
+
+        <div id="header">
+            <span class="MummieFabriekTekst">De Mummiefabriek</span>
+        </div>
+
+        <div id="indexIntroductieLinks">
+            <center><h1>Welkom bij de Mummiefabriek!</h1></center>
+            <br><br><br>
+            <br><br><br>
+            <center>
+                <a href="index.html" class="button">Artikelen</a>
+                <br><br>
+                <a href="klanten.html" class="button">Klanten</a>
+                <br><br>
+                <a href="about.html" class="button">Over ons</a>
+            </center>
+        </div>
+
+        <div id="indexInhoudMidden">
+            <form id="artikelToevoegen" method="post">
+                <table id="artikelen" class="listTable">
+                    <tr>
+                        <td>Artikelnaam</td>
+                        <td><input type="text" size="50" name="artikelnaam"
+                                   id="artikelnaam"/></td>
+                    </tr>
+                    <tr>
+                        <td>Artikelprijs</td>
+                        <td><input type="text" name="artikelprijs"
+                                   id="artikelprijs" size="50"/></td>
+                    </tr>
+                    <tr>
+                        <td>Artikelvoorraad</td>
+                        <td><input type="text" name="artikelvoorraad" size="50"
+                                   id="artikelvoorraad"/></td>
+                    </tr>
+                        <td></td>
+                        <td><input type="submit" value="Voeg artikel toe"/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="footer">
+            <span>© 2016, Khufu &amp; Dochters</span>
+        </div>
+    </body>
+</html>
