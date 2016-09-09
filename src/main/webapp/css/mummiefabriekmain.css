@@ -79,9 +79,25 @@ a.button:hover {
      transition-duration: 0.4s;
 }
 
-/*.button:hover {
-    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
-}*/
+a.buttonRechts {
+    background-color: rgba(47, 79, 79, 0.80);
+    height: 45px;
+    width: 30%;
+    border-style: solid;
+    border-width: thin;
+    border-color: silver;
+    color: whitesmoke;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24), 0 14px 20px 0 rgba(0,0,0,0.19);
+}
+
+a.buttonRechts:hover {
+    background-color: rgba(231, 231, 231, 0.25);
+     transition-duration: 0.4s;
+}
 
 #indexInhoudMidden {
     height: auto;
