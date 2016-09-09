@@ -48,7 +48,7 @@ body {
     float: left;
     margin: 20px auto auto 20px;
     background: rgba(255, 255, 255, 0.6);
-    color: darkslategrey;
+    color: #2c231c;
     border-style: solid;
     border-width: thin;
 }
@@ -61,7 +61,7 @@ h1.indexIntroductieLinks {
 /*button styles*/
 
 a.button {
-    background-color: rgba(47, 79, 79, 0.80);
+    background-color: rgba(44, 35, 28, 0.80);
     height: 45px;
     width: 80%;
     border-style: solid;
@@ -81,7 +81,7 @@ a.button:hover {
 }
 
 a.buttonRechts {
-    background-color: rgba(47, 79, 79, 0.80);
+    background-color: rgba(44, 35, 28, 0.85);
     height: 45px;
     width: 30%;
     border-style: solid;
@@ -96,8 +96,9 @@ a.buttonRechts {
 }
 
 a.buttonRechts:hover {
-    background-color: rgba(231, 231, 231, 0.25);
-     transition-duration: 0.4s;
+    background-color: rgba(231, 231, 231, 0.50);
+    color: rgba(44, 35, 28, 0.70);
+    transition-duration: 0.4s;
 }
 
 #indexInhoudMidden {
@@ -106,7 +107,7 @@ a.buttonRechts:hover {
     float: right;
     margin: 20px 20px auto auto;
     background: rgba(255, 255, 255, 0.6);
-    color: darkslategrey;
+    color: #2c231c;
     border-style: solid;
     border-width: thin;
 }
